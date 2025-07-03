@@ -1,0 +1,9 @@
+[build]
+  base = "Job Interview AI"
+  command = "npx ng build --configuration production"
+  publish = "dist/Job Interview AI/browser"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
