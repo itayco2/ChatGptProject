@@ -1,7 +1,24 @@
 <div>
-    <a routerLink="/home">Home</a>
-    <span> | </span>
-    <a routerLink="/ai">AI</a>
-    <span> | </span>
-    <a routerLink="/about">About</a>
+    <!-- Desktop Menu -->
+    <div class="menu-links">
+        <a routerLink="/home" routerLinkActive="active">Home</a>
+        <span>|</span>
+        <a routerLink="/ai" routerLinkActive="active">AI</a>
+        <span>|</span>
+        <a routerLink="/about" routerLinkActive="active">About</a>
+    </div>
+
+    <!-- Mobile Hamburger Button -->
+    <div class="hamburger" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" [class.open]="isMenuOpen">
+        <a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a>
+        <a routerLink="/ai" routerLinkActive="active" (click)="closeMenu()">AI</a>
+        <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a>
+    </div>
 </div>

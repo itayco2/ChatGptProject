@@ -1,6 +1,77 @@
+/* Container styling */
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Responsive image styling */
 img {
-    border: 1px solid black;
-    margin: 30px;
-    border-radius: 20px;
-    height: 70vh;
+    border: 2px solid #333;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Responsive sizing */
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: cover;
+    
+    /* Ensures image maintains aspect ratio */
+    aspect-ratio: 16/9;
+}
+
+/* Hover effect for desktop */
+img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+    div {
+        padding: 15px;
+        min-height: 80vh;
+    }
+    
+    img {
+        max-width: 100%;
+        border-radius: 12px;
+        border-width: 1.5px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    div {
+        padding: 10px;
+        min-height: 60vh;
+    }
+    
+    img {
+        border-radius: 10px;
+        border-width: 1px;
+        aspect-ratio: 4/3; /* Better aspect ratio for mobile */
+    }
+    
+    /* Disable hover effects on mobile */
+    img:hover {
+        transform: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 320px) {
+    div {
+        padding: 8px;
+    }
+    
+    img {
+        border-radius: 8px;
+    }
 }

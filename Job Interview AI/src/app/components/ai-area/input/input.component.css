@@ -1,11 +1,154 @@
+/* Container div */
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Form styling */
+form {
+    width: 100%;
+    max-width: 500px;
+    border: 2px solid #e0e0e0;
+    padding: 30px;
+    margin: 0;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+/* Material form field styling */
 mat-form-field {
     width: 100%;
 }
 
-form {
-    width: 400px;
-    border: 1px solid black;
-    padding: 20px;
-    margin: 30px auto;
-    border-radius: 10px;
+/* Button styling */
+button {
+    margin-top: 10px !important;
+    padding: 12px 24px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Input field enhancements */
+::ng-deep .mat-mdc-form-field {
+    margin-bottom: 8px;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+    border-radius: 8px;
+}
+
+::ng-deep .mat-mdc-form-field-label {
+    font-weight: 500;
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+    div {
+        padding: 15px;
+        min-height: 60vh;
+    }
+    
+    form {
+        max-width: 100%;
+        padding: 25px;
+        border-radius: 12px;
+        gap: 18px;
+    }
+    
+    button {
+        padding: 14px 28px !important;
+        font-size: 1.1rem !important;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    div {
+        padding: 10px;
+        min-height: 50vh;
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+    
+    form {
+        padding: 20px;
+        border-radius: 12px;
+        gap: 16px;
+        border-width: 1px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    button {
+        padding: 16px 32px !important;
+        font-size: 1.1rem !important;
+        width: 100%;
+        margin-top: 20px !important;
+    }
+    
+    /* Mobile-specific form field adjustments */
+    ::ng-deep .mat-mdc-form-field {
+        margin-bottom: 4px;
+    }
+    
+    ::ng-deep .mat-mdc-form-field-label {
+        font-size: 0.9rem;
+    }
+    
+    ::ng-deep .mat-mdc-text-field-wrapper {
+        min-height: 48px; /* Touch-friendly height */
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 320px) {
+    div {
+        padding: 8px;
+    }
+    
+    form {
+        padding: 16px;
+        gap: 14px;
+    }
+    
+    button {
+        padding: 14px 24px !important;
+        font-size: 1rem !important;
+    }
+}
+
+/* Form title enhancement (if you want to add one) */
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Loading state for button */
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Focus improvements for accessibility */
+::ng-deep .mat-mdc-form-field.mat-focused .mat-mdc-text-field-wrapper {
+    box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+}
+
+/* Error state improvements */
+::ng-deep .mat-mdc-form-field.mat-form-field-invalid .mat-mdc-text-field-wrapper {
+    border-color: #f44336;
 }

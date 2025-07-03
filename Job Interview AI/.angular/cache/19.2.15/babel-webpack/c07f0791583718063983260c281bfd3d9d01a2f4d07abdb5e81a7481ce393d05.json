@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const environment = {\n  gptUrl: \"https://api.openai.com/v1/chat/completions\",\n  apiKey: \"Here we put the api key\"\n};","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

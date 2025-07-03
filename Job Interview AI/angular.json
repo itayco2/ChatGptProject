@@ -36,11 +36,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/job-interview-ai",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+           "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -87,18 +87,19 @@
           },
           "defaultConfiguration": "production"
         },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "JobInterviewAI:build:production"
-            },
-            "development": {
-              "buildTarget": "JobInterviewAI:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
+"serve": {
+  "builder": "@angular-devkit/build-angular:dev-server",
+  "configurations": {
+    "production": {
+      "buildTarget": "JobInterviewAI:build:production"
+    },
+    "development": {
+      "buildTarget": "JobInterviewAI:build:development",
+      "hmr": false
+    }
+  },
+  "defaultConfiguration": "development"
+},
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
         },

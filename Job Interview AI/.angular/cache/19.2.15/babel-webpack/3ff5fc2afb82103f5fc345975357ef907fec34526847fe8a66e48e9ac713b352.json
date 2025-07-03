@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { bootstrapApplication } from '@angular/platform-browser';\nimport { appConfig } from './app/app.config';\nimport { LayoutComponent } from './app/components/layout-area/layout/layout.component';\nbootstrapApplication(LayoutComponent, appConfig).catch(err => console.error(err));","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
