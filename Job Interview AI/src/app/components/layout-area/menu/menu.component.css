@@ -47,6 +47,8 @@ div {
     height: 24px;
     justify-content: space-between;
     z-index: 1001;
+    position: relative;
+    padding: 8px; /* Add padding for better touch target */
 }
 
 .hamburger span {
@@ -76,7 +78,7 @@ div {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.95);
     z-index: 1000;
@@ -84,6 +86,8 @@ div {
     justify-content: center;
     align-items: center;
     gap: 30px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .mobile-menu.open {
@@ -99,6 +103,8 @@ div {
     border-radius: 25px;
     transition: all 0.3s ease;
     text-align: center;
+    min-width: 200px;
+    display: block;
 }
 
 .mobile-menu a:hover,
@@ -127,10 +133,43 @@ div {
     
     .hamburger {
         display: flex;
+        margin-right: 4px; /* Add small margin to prevent edge cutoff */
     }
     
+    /* Keep the main container positioned relatively */
     div {
-        position: static;
+        position: relative;
+    }
+    
+    .mobile-menu {
+        padding: 40px 20px;
+        gap: 25px;
+    }
+    
+    .mobile-menu a {
+        font-size: 1.3rem;
+        padding: 12px 25px;
+        min-width: 180px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 320px) {
+    .hamburger {
+        width: 24px;
+        height: 20px;
+        margin-right: 2px;
+    }
+    
+    .mobile-menu {
+        padding: 30px 15px;
+        gap: 20px;
+    }
+    
+    .mobile-menu a {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+        min-width: 160px;
     }
 }
 

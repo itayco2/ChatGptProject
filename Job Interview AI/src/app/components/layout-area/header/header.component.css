@@ -9,8 +9,9 @@ div {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 999; /* Reduced to allow menu overlay to be above */
     box-sizing: border-box;
+    overflow: visible; /* Allow menu to overflow */
 }
 
 /* Title styling */
@@ -29,8 +30,7 @@ h1 {
 app-menu {
     display: flex;
     align-items: center;
-    position: absolute;
-    left: 20px;
+    position: relative; /* Changed from absolute to relative */
     z-index: 1001;
 }
 
@@ -45,10 +45,6 @@ app-menu {
         font-size: 1.5rem;
         letter-spacing: 0.5px;
     }
-    
-    app-menu {
-        left: 15px;
-    }
 }
 
 /* Mobile styles */
@@ -59,6 +55,8 @@ app-menu {
         background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
         border-radius: 0 0 16px 16px;
         margin-bottom: 8px;
+        justify-content: flex-start; /* Align items to start */
+        gap: 16px; /* Add gap between menu and title */
     }
     
     h1 {
@@ -66,12 +64,11 @@ app-menu {
         font-weight: 600;
         letter-spacing: 0.3px;
         text-align: left;
-        margin-left: 50px; /* Space for hamburger menu */
+        margin-left: 0; /* Remove margin since we're using gap */
         flex-grow: 0;
     }
     
     app-menu {
-        left: 12px;
         transform: scale(0.9);
     }
 }
@@ -82,17 +79,17 @@ app-menu {
         height: 52px;
         padding: 0 10px;
         border-radius: 0 0 12px 12px;
+        gap: 12px;
     }
     
     h1 {
         font-size: 0.95rem;
         font-weight: 500;
-        margin-left: 45px;
+        margin-left: 0;
         letter-spacing: 0.1px;
     }
     
     app-menu {
-        left: 10px;
         transform: scale(0.8);
     }
 }
